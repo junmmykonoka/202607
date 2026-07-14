@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ja" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="滋賀県（石山・草津・守山・野洲・近江八幡）エリアのおすすめ飲食店をご紹介。寿司、和食、焼鳥、鰻、創作バルなど、こだわりのお店をセレクト。">
+  <title>BIWAKO GOURMET PORTAL | 滋賀のおすすめ飲食店ガイド</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+  
+  <!-- Styling -->
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- FontAwesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Top Hero Header -->
+  <header class="hero-section" id="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="header-top">
+        <span class="logo-text">BIWAKO GOURMET</span>
+        <button id="theme-toggle" class="theme-btn" aria-label="テーマの切り替え" title="ダーク/ライトモード切り替え">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+      </div>
+      <div class="hero-main">
+        <p class="hero-subtitle">滋賀・琵琶湖沿線のお気に入り</p>
+        <h1 class="hero-title">Selected Restaurants</h1>
+        <p class="hero-desc">石山から近江八幡まで、本当に美味しいこだわりのお店を厳選してご紹介します。</p>
+        <a href="#portal-main" class="scroll-down-btn" aria-label="メインコンテンツへスクロール">
+          <span class="btn-text">Explore</span>
+          <i class="fa-solid fa-chevron-down animate-bounce"></i>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Area -->
+  <main class="portal-container" id="portal-main">
+    
+    <!-- Sidebar / Filters -->
+    <section class="filter-section" aria-label="店舗絞り込み">
+      <div class="filter-group">
+        <h2 class="filter-title"><i class="fa-solid fa-location-dot"></i> エリアで探す</h2>
+        <div class="filter-buttons" id="area-filters">
+          <button class="filter-btn active" data-filter="all">すべて</button>
+          <button class="filter-btn" data-filter="石山">石山</button>
+          <button class="filter-btn" data-filter="草津・南草津">草津・南草津</button>
+          <button class="filter-btn" data-filter="守山">守山</button>
+          <button class="filter-btn" data-filter="野洲">野洲</button>
+          <button class="filter-btn" data-filter="近江八幡">近江八幡</button>
+        </div>
+      </div>
+
+      <div class="filter-group">
+        <h2 class="filter-title"><i class="fa-solid fa-utensils"></i> ジャンルで探す</h2>
+        <div class="filter-buttons" id="genre-filters">
+          <button class="filter-btn active" data-filter="all">すべて</button>
+          <button class="filter-btn" data-filter="和食・寿司">和食・寿司</button>
+          <button class="filter-btn" data-filter="焼鳥・肉料理">焼鳥・肉料理</button>
+          <button class="filter-btn" data-filter="居酒屋・バル">居酒屋・バル</button>
+          <button class="filter-btn" data-filter="鰻">鰻</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cards Grid -->
+    <section class="restaurant-section" aria-label="店舗一覧">
+      <div class="results-count" id="results-count">
+        全 <span id="count-num">8</span> 件の店舗を表示中
+      </div>
+      <div class="restaurant-grid" id="restaurant-grid">
+        <!-- JSで動的にカードを生成して挿入します -->
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer-section">
+    <div class="footer-content">
+      <p class="footer-logo">BIWAKO GOURMET PORTAL</p>
+      <p class="footer-copy">&copy; 2026 BIWAKO GOURMET PORTAL. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- HTML5 Dialog Element for Premium Modal View -->
+  <dialog id="detail-modal" class="detail-dialog">
+    <div class="modal-wrapper">
+      <button id="close-modal" class="close-btn" aria-label="閉じる">&times;</button>
+      <div class="modal-body" id="modal-content">
+        <!-- JSで動的にモーダルの内容を生成して挿入します -->
+      </div>
+    </div>
+  </dialog>
+
+  <!-- JavaScript logic -->
+  <script src="app.js"></script>
+</body>
+</html>
