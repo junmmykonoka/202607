@@ -1,83 +1,7 @@
 // 滋賀・琵琶湖エリア お気に入り飲食店データ
-const restaurants = [
-  {
-    id: 1,
-    name: "風土Bar 三日月",
-    area: "近江八幡",
-    genre: "居酒屋・バル",
-    budget: "￥3,000～￥3,999",
-    description: "近江八幡エリアで人気の創作居酒屋。掘りごたつのカウンターや畳の座敷があり、落ち着いた空間でゆったりと過ごせます。地元の新鮮な食材を活かした創作料理やB級グルメ、豊富なドリンクメニューが自慢です。",
-    address: "滋賀県近江八幡市鷹飼町無番地（近江八幡駅すぐ）",
-    tel: "0748-33-3139 (※詳細はお問い合わせください)",
-    access: "JR琵琶湖線 近江八幡駅 徒歩2分",
-    image: "images/mikazuki.jpg",
-    url: "https://foodbarmikazuki.gorp.jp/",
-    features: ["掘りごたつカウンター", "畳のお座敷", "地元食材の創作料理", "豊富なアルコールメニュー"]
-  },
-  {
-    id: 2,
-    name: "炭火焼鳥 とりのこころ 近江八幡店",
-    area: "近江八幡",
-    genre: "焼鳥・肉料理",
-    budget: "￥3,000～￥3,999",
-    description: "備長炭で豪快かつ繊細に焼き上げる「近江黒鶏」や「大山産がいなどり」などの銘柄鶏が主役。香ばしい炭の香りとジューシーな肉の旨みが口いっぱいに広がります。アットホームな「町の焼鳥屋さん」をコンセプトにした落ち着くお店です。",
-    address: "滋賀県近江八幡市中村町21-12",
-    tel: "0748-36-3939",
-    access: "JR琵琶湖線 近江八幡駅 徒歩8分",
-    image: "images/torinokokoro.jpg",
-    url: "https://sumibiyakitori-torinokokoro.gorp.jp/",
-    features: ["備長炭使用", "近江黒鶏・大山がいなどり", "店主厳選の焼き加減", "アットホームなカウンター席"]
-  },
-  {
-    id: 3,
-    name: "すしと酒 －箔－ 草津本店",
-    area: "草津・南草津",
-    genre: "和食・寿司",
-    budget: "￥4,000～￥4,999",
-    description: "草津駅近くに佇む寿司居酒屋。毎朝仕入れる鮮度抜群のネタを使った握り寿司をはじめ、創作天ぷらや全国から厳選した日本酒をリーズナブルに楽しめます。個室も完備しており、デートや会食にも最適です。",
-    address: "滋賀県草津市大路1丁目12-1 星空館 1F",
-    tel: "077-599-1033",
-    access: "JR琵琶湖線 草津駅 東口 徒歩3分",
-    image: "images/haku.jpg",
-    url: "https://kejc100.gorp.jp/",
-    features: ["本格握り寿司", "創作天ぷら", "銘酒・日本酒多数", "落ち着いた個室空間"]
-  },
-  {
-    id: 4,
-    name: "和のほとり 忠兵衛",
-    area: "守山",
-    genre: "和食・寿司",
-    budget: "￥5,000～￥5,999",
-    description: "守山にある大人の隠れ家和食処。店主自ら目利きした滋賀県では珍しい希少な鮮魚のお造り盛り合わせが名物。地元の厳選日本酒や本格焼酎とのペアリングが絶品です。掘りごたつの完全個室で上質な時間を提供します。",
-    address: "滋賀県守山市守山1丁目6-12",
-    tel: "077-514-1188",
-    access: "JR琵琶湖線 守山駅 西口 徒歩7分",
-    image: "images/chubee.jpg",
-    url: "https://chu-be.gorp.jp/",
-    features: ["希少な鮮魚お造り", "完全個室完備", "こだわり抜いた地酒", "上品な数寄屋風店内"]
-  },
-  {
-    id: 5,
-    name: "鰻と酒 成瀬 野洲店",
-    area: "野洲",
-    genre: "鰻",
-    budget: "￥3,000～￥4,999",
-    description: "伝統的な絶品の鰻重をお値打ち価格で提供する人気店。ふっくらと蒸し上げて香ばしく焼き上げたうな重はもちろん、鰻肝のアヒージョや鰻おつまみピッツァなど、お酒が美味しく進む創作鰻メニューも豊富に揃うモダンな鰻バルです。",
-    address: "滋賀県野洲市小篠原1000 (※詳細はお問い合わせください)",
-    tel: "077-584-5980",
-    access: "JR琵琶湖線 野洲駅 南口 徒歩4分",
-    image: "images/naruse.jpg",
-    url: "https://kepx800.gorp.jp/",
-    features: ["ふっくらうな重", "鰻創作おつまみ", "気軽にワインや日本酒と", "カフェのようなモダン内装"]
-  },
-  {
-    id: 6,
-    name: "創作むらさき",
-    area: "野洲",
-    genre: "和食・寿司",
-    budget: "昼: ￥2,000～ / 夜: ￥6,000～￥7,999",
-    description: "野洲駅近くの本格割烹・創作料理店。琵琶湖や全国の活魚、極上の近江牛を使った繊細な逸品料理を堪能できます。お昼は豪華な「A5等級近江牛御膳」や「海鮮御膳」が人気。お祝い事や接待にふさわしい気品あるお店です。",
-    address: "滋賀県野洲市北野1丁目1-20",
+// ※ 店舗データは restaurants.json で管理しています
+
+��北野1丁目1-20",
     tel: "077-514-9111",
     access: "JR琵琶湖線 野洲駅 北口 徒歩3分",
     image: "images/murasaki.jpg",
@@ -111,8 +35,37 @@ const restaurants = [
     image: "images/nikukappou.jpg",
     url: "https://tabelog.com/shiga/A2501/A250101/25009945/",
     features: ["名物肉曼荼羅", "極厚牛タンステーキ", "揚げたて創作天ぷら", "石山駅近の好立地"]
+  },
+  {
+    id: 9,
+    name: "さかなと炭火 魚太朗",
+    area: "近江八幡",
+    genre: "魚介・海鮮",
+    budget: "￥3,000～￥3,999",
+    description: "近江八幡の地で愛される魚料理専門の居酒屋。その日仕入れた新鮮な魚を炭火で丁寧に焼き上げた炭火焼きや、旬の魚のお造り盛り合わせが絶品。カウンター席でひとりでも気軽に立ち寄れる落ち着いた雰囲気。個室（最大12名）もあり、宴会にも対応。",
+    address: "滋賀県近江八幡市出町411-9",
+    tel: "0748-43-2800",
+    access: "JR東海道本線 近江八幡駅 北口 徒歩約7分",
+    image: "images/uotaro.jpg",
+    url: "https://hachiman-uotaro.owst.jp/",
+    features: ["日替わり新鮮魚", "炭火焼き", "お造り盛り合わせ", "個室あり（最大12名）"]
+  },
+  {
+    id: 10,
+    name: "すし処 一魚一会",
+    area: "近江八幡",
+    genre: "魚介・海鮮",
+    budget: "￥1,000～￥1,999",
+    description: "近江八幡市・江頭町にある寿司と海鮮料理の店。ランチから充実しており、豪快な海鮮丼「海鮮ぎょんのギョギョ」や各種刺身定食など、海なし県・滋賀で本格的な魚介を堪能できると地元客に人気。夜は会席料理も楽しめる隠れた名店。",
+    address: "滋賀県近江八幡市江頭町443",
+    tel: "0748-36-6177",
+    access: "JR東海道本線 近江八幡駅より車で約5分",
+    image: "images/ichigyo.jpg",
+    url: "https://tabelog.com/shiga/A2503/A250301/25013426/",
+    features: ["豪快な海鮮丼", "新鮮お刺身定食", "ランチ15時まで", "会席料理あり"]
   }
-];
+// 外部JSONファイルから読み込む店舗データ
+let restaurants = [];
 
 // 状態管理
 let currentAreaFilter = "all";
@@ -128,12 +81,24 @@ const themeToggle = document.getElementById("theme-toggle");
 
 // 初期化処理
 document.addEventListener("DOMContentLoaded", () => {
-  renderCards();
-  setupFilters();
+  // restaurants.json を読み込んでから描画する
+  fetch("restaurants.json")
+    .then(res => res.json())
+    .then(data => {
+      restaurants = data;
+      renderCards();
+      setupFilters();
+    })
+    .catch(err => {
+      console.error("データの読み込みに失敗しました:", err);
+      restaurantGrid.innerHTML = "<p style='color:var(--text-secondary);text-align:center;grid-column:1/-1;'>データを読み込めませんでした。</p>";
+    });
+
   setupTheme();
-  
+
   // モーダル外クリックで閉じる処理
   detailModal.addEventListener("click", (e) => {
+
     if (e.target === detailModal) {
       closeModal();
     }
